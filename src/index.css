@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .bg-blur {
+    backdrop-filter: blur(8px);
+  }
+  
+  .glass-morphism {
+    @apply bg-slate-800/50 backdrop-blur-sm border border-slate-700;
+    background-image: linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.02)
+    );
+  }
+  
+  .section-spacing {
+    @apply py-20 md:py-32;
+  }
+  
+  .container-padding {
+    @apply px-4 md:px-6 lg:px-8;
+  }
+  
+  .hover-lift-sm {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+  
+  .hover-lift-md {
+    @apply transition-transform duration-300 hover:-translate-y-2;
+  }
+
+  .gold-gradient {
+    @apply bg-gradient-to-r from-gold-400 to-gold-600;
+  }
+
+  .gold-glow {
+    text-shadow: 0 0 20px rgba(250, 189, 0, 0.5);
+  }
+}
+
+/* Enhance existing animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  @apply overflow-x-hidden;
+}
+
+/* Enhance section transitions */
+section {
+  @apply relative overflow-hidden;
+}
+
+/* Improve spacing between sections */
+section + section {
+  @apply mt-0;
+}
+
+/* Add gradient text enhancement */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-gold-400 to-gold-600;
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+}
