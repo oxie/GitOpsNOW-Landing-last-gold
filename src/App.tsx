@@ -10,9 +10,7 @@ function App() {
       <ParticleBackground />
       <div className="relative">
         <Header />
-        <Suspense fallback={<LoadingSpinner />}>
           <HomePage />
-        </Suspense>
       </div>
     </div>
   );
